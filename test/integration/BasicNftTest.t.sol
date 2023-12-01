@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
 pragma solidity ^0.8.20;
 
-import {Test, console} from "../lib/forge-std/src/Test.sol";
-import {DeployBasicNft} from "../script/DeployBasicNft.s.sol";
-import {BasicNft} from "../src/BasicNft.sol";
+import {Test, console} from "../../lib/forge-std/src/Test.sol";
+import {DeployBasicNft} from "../../script/DeployBasicNft.s.sol";
+import {BasicNft} from "../../src/BasicNft.sol";
 
 contract BasicNftTest is Test {
     DeployBasicNft public deployer;
