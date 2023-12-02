@@ -32,4 +32,9 @@ contract Encoding {
         bytes memory someString = bytes("Cast string into bytes");
         return someString;
     }
+
+    function decodeString() public pure returns (string memory) {
+        string memory someString = abi.decode(encodeString(), (string));
+        return someString;
+    }
 }
