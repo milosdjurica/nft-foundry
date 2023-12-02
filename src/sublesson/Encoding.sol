@@ -50,4 +50,24 @@ contract Encoding {
         );
         return (someString, secondString);
     }
+
+    function multiEncodePacked() public pure returns (bytes memory) {
+        bytes memory someString = abi.encodePacked(
+            "some string",
+            " second string"
+        );
+        return someString;
+    }
+
+    // ! THIS DOESNT WORK !!!!
+    function multiDecodePacked() public pure returns (string memory) {
+        string memory someString = abi.decode(multiEncodePacked());
+        return someString;
+    }
+
+    // ! This works! Because encodePacked() is "similar" to type casting
+    function multiStringCastPacked() public pure returns (string memory) {
+        string memory someString = string(multiEncodePacked());
+        return someString;
+    }
 }
