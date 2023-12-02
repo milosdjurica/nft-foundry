@@ -25,4 +25,11 @@ contract Encoding {
 
         return someString;
     }
+
+    // this and encodePacked() are very similar, but they do diff things
+    // read more about it here -> // https://forum.openzeppelin.com/t/difference-between-abi-encodepacked-string-and-bytes-string/11837
+    function encodeStringBytes() public pure returns (bytes memory) {
+        bytes memory someString = bytes("Cast string into bytes");
+        return someString;
+    }
 }
