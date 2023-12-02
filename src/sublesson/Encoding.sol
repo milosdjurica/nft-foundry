@@ -37,4 +37,17 @@ contract Encoding {
         string memory someString = abi.decode(encodeString(), (string));
         return someString;
     }
+
+    function multiEncode() public pure returns (bytes memory) {
+        bytes memory someString = abi.encode("some string ", "with addition");
+        return someString;
+    }
+
+    function multiDecode() public pure returns (string memory, string memory) {
+        (string memory someString, string memory secondString) = abi.decode(
+            multiEncode(),
+            (string, string)
+        );
+        return (someString, secondString);
+    }
 }
